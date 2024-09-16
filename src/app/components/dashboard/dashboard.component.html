@@ -1,0 +1,87 @@
+<!-- HEADER -->
+<div class="container w-full">
+  <app-header></app-header>
+</div>
+
+<!-- WALLETS -->
+<div class="container w-full">
+  <div class="row w-full">
+    <h1>WALLETS</h1>
+  </div>
+
+  <app-wallets
+    [walletList]="walletList"
+    (newWalletList)="updateWalletList($event)"
+  ></app-wallets>
+</div>
+
+<!-- MOVEMENTS -->
+<div class="container w-full">
+  <div class="row w-full">
+    <h1>MOVEMENTS</h1>
+  </div>
+
+  <div class="row wrap w-full space-between">
+    <app-movements [movementList]="movementList"></app-movements>
+
+    <div class="chart-area mt-1">
+      <div class="chart-container">
+        <canvas
+          baseChart
+          *ngIf="isBrowser"
+          [data]="pieChartData"
+          [type]="pieChartType"
+          [options]="pieChartOptions"
+          [legend]="pieChartLegend"
+          [plugins]="pieChartPlugins"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SPESE -->
+<app-modal
+  *ngIf="showModalMovement"
+  [modalTitle]="'Nuova Spesa'"
+  (closeModalOutput)="closeModal()"
+>
+  <ng-container content>
+    <div class="form-content">
+      <div class="input-area">
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="newMovement.name" />
+      </div>
+
+      <div class="input-area">
+        <label for="import">Import</label>
+        <input type="number" name="import" [(ngModel)]="newMovement.import" />
+      </div>
+
+      <div class="input-area">
+        <label for="type">Wallet</label>
+        <select
+          name="type"
+          [ngModel]="newMovement.walletId"
+          (ngModelChange)="updateWalletSelect($event)"
+        >
+          <option *ngFor="let wallet of walletOptions" [value]="wallet.id">
+            {{ wallet.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="row w-full gap-1 mt-1">
+        <!-- <button *ngIf="isEdit" class="flex-1 red-btn">
+          Delete
+        </button> -->
+        <button class="flex-1" (click)="saveMovement()">Save</button>
+      </div>
+    </div>
+  </ng-container>
+</app-modal>
+
+<button class="shop-btn" (click)="openModal()">
+  <i class="fa-solid fa-plus fa-xl"></i>
+</button>

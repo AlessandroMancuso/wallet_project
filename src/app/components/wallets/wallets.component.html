@@ -1,0 +1,48 @@
+<div class="row w-full custom-gap mt-1 mobile-carousel">
+  <app-card
+    [cardType]="'ghost-card'"
+    [cardTitle]="'Add wallet'"
+    [cardIcon]="getIcon()"
+    (cardClickOutput)="openModal()"
+  ></app-card>
+
+  <div *ngFor="let wallet of walletList">
+    <app-card
+      [cardTitle]="wallet.name"
+      [subTitle]="wallet.balance"
+      [cardIcon]="getIcon(wallet.type)"
+      (cardClickOutput)="openModal(wallet)"
+    ></app-card>
+  </div>
+
+  <app-modal *ngIf="showModal" [modalTitle]="isEdit ? 'Edit Wallet' : 'New Wallet'" (closeModalOutput)="closeModal()">
+    <ng-container content>
+      <div class="form-content">
+        <div class="input-area">
+          <label for="name">Name</label>
+          <input type="text" name="name" [(ngModel)]="newWallet.name" />
+        </div>
+
+        <div class="input-area">
+          <label for="balance">Balance</label>
+          <input type="number" name="balance" [(ngModel)]="newWallet.balance" />
+        </div>
+
+        <div class="input-area">
+          <label for="type">Wallet type</label>
+          <select name="type" [(ngModel)]="newWallet.type">
+            <option value="account">Account</option>
+            <option value="cash">Cash</option>
+            <option value="savings">Savings</option>
+          </select>
+        </div>
+
+        <div class="row w-full gap-1 mt-1">
+          <button *ngIf="isEdit" class="flex-1 red-btn" (click)="deleteWallet()">Delete</button>
+          <button class="flex-1" (click)="saveWallet(isEdit)">Save</button>
+        </div>
+
+      </div>
+    </ng-container>
+  </app-modal>
+</div>

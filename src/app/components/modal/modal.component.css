@@ -1,0 +1,47 @@
+
+.modal-background {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.795);
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.modal {
+    width: 30em;
+    background-color: #222222;
+    border-radius: 2.5em;
+    position: absolute;
+
+    padding: 2.5em;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.close-modal i {
+    color: #E0E0E0;
+    cursor: pointer;
+}
+
+.close-modal i:hover {
+    color: #e0e0e094;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .modal {
+        width: 23em;
+        border-radius: 1.5em;
+    }
+
+}

@@ -1,0 +1,15 @@
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.logo i {
+    color: #679269;
+}
+
+.logo span {
+    font-size: 25px;
+    color: #679269;
+}

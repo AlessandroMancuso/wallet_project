@@ -1,1 +1,142 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* FONTS */
+
+@font-face {
+    font-family: 'Roboto regular';
+    src: url("../public/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #1E1E1E;
+    font-family: 'Roboto regular';
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 300;
+    color: #fefefe;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fefefe;
+}
+
+span {
+    color: #fefefe
+}
+
+.container {
+    padding: 2em;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex: 1;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.gap-1 {
+    gap: 1em;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 0.5em;
+}
+
+select {
+    padding: 0.5em;
+}
+
+button {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    font-size: 16px;
+    background-color: #49644a;
+    border: 3px solid #679269;
+    color: #fefefe;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #679269;
+} 
+
+.red-btn {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    font-size: 16px;
+    background-color: #a72b2b;
+    border: 3px solid #c33939;
+    color: #fefefe;
+
+    cursor: pointer;
+}
+
+.red-btn:hover {
+    background-color: #c33939;
+}
+
+.form-content {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.input-area label {
+    color: #fefefe;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .container {
+        padding: 2em 0 0 1em;
+    }
+
+}

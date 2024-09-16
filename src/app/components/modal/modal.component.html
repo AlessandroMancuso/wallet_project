@@ -1,0 +1,11 @@
+<div class="modal-background">
+  <div class="modal">
+    <div class="modal-header" (click)="closeModal()">
+        <h1>{{ modalTitle }}</h1>
+      <span class="close-modal">
+        <i class="fa-solid fa-xmark fa-2x"></i>
+      </span>
+    </div>
+    <ng-content [select]="content"></ng-content>
+  </div>
+</div>

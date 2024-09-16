@@ -1,0 +1,76 @@
+
+.dark-box {
+    width: 40vw;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: #424242;
+}
+
+.box-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.movement {
+    display: flex;
+    align-items: center;
+    padding: 0.3em;
+}
+
+.movement-icon {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: #7d7d7d;
+}
+
+.movement-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin-left: 0.5em;
+}
+
+.movement-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.movement-title {
+    font-size: 16px;
+}
+
+.movement-subtitle {
+    font-size: 12px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.footer-text {
+    font-size: 18px;
+    color: #679269;
+}
+
+.custom-font {
+    font-size: 18px;
+}
+
+hr {
+    color: #fefefe65;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .dark-box {
+        width: 90vw;
+        padding: 1em;
+        border-radius: 1em;
+        background-color: #424242;
+    }
+
+}

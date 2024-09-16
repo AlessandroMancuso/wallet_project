@@ -1,0 +1,50 @@
+
+.lista-spese {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.shop-btn {
+    width: 3em;
+    height: 3em;
+    background-color: #49644a;
+    border: 2px solid #679269;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.shop-btn:hover {
+    background-color: #679269;
+}
+
+.chart-area {
+    width: 40vw;
+    height: 5em;
+}
+
+.chart-container {
+    display: block; 
+    width: 60%; 
+    margin: auto;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .chart-area {
+        width: 90vw;
+    }
+
+    .chart-container {
+        width: 70%;
+    }
+
+}

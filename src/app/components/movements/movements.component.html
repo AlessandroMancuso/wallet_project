@@ -1,0 +1,27 @@
+<div class="dark-box mt-1">
+  <h2 class="custom-font">Last Movements</h2>
+
+  <hr class="mt-1" />
+  <div class="footer-content">
+    <div class="mt-1" *ngIf="movementList?.length == 0">
+      <span>{{"Non sono ancora presenti movimenti"}}</span>
+    </div>
+    <div
+      *ngFor="let item of movementList | slice : 0 : 3"
+      class="movement mt-1"
+    >
+      <div class="movement-icon"></div>
+      <div class="movement-details">
+        <div class="movement-detail">
+          <span class="movement-title">{{ item.name }}</span>
+          <span class="movement-subtitle">{{ item.walletName }}</span>
+        </div>
+        <span>- {{ item.import }} €</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-footer mt-1">
+    <span class="footer-text">Show All</span>
+  </div>
+</div>

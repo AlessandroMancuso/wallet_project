@@ -1,0 +1,14 @@
+
+<div [class]="cssClass" (click)="cardClick()" >
+
+    <div class="icon-container">
+        <i [class]="cardIcon"></i>
+    </div>
+    <div class="card-details">
+        <span class="card-title" >{{ cardTitle }}</span>
+        <span class="card-subtitle" *ngIf="subTitle" >
+            {{ subTitle }} €
+        </span>
+    </div>
+
+</div>
